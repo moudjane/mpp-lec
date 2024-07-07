@@ -16,9 +16,10 @@ public class LoLEsportsService {
     @Value("${LoLesports.api.token}")
     private String apiToken;
 
-    public String getLECStandings() {
-        String apiUrl = "https://esports-api.lolesports.com/persisted/gw/getStandings?hl=en-US&tournamentId=112352881163915249";
+    @Value("${LoLesports.api.url}")
+    private String apiUrl;
 
+    public String getLECStandings() {
         HttpHeaders headers = new HttpHeaders();
         headers.set("x-api-key", apiToken);
 
